@@ -1,0 +1,161 @@
+#1.Anagram or not
+
+# s1="dog"
+# s2="god"
+# anagrams = sorted(s1.lower()) == sorted(s2.lower())
+# print(anagrams)
+
+
+
+# #3. removing duplicates from a given sentence
+
+# a="Good day day bye bye"
+# words=a.split()
+# unique_words=[]
+# for word in words:
+#     if word not in unique_words:
+#         unique_words.append(word)
+# output=" ".join(unique_words)
+# print(output)
+
+
+# #4.weight of the given string
+
+# str="Apple"
+# weight=0
+# for char in str:
+#     if char.isalpha():
+#         weight +=(ord(char.lower())-96)#ord returns the ascii value
+# print(weight)
+
+
+
+# #5.All strings which starts as "S"
+strings = ["apple", "sample", "search", "cat"]
+
+starts_with_s = [s for s in strings if s.lower().startswith('s')]
+
+unique_character_strings = [s for s in strings if len(s) == len(set(s))]
+
+
+print("Strings starting with 'S':", starts_with_s)
+print("Strings with all unique characters:", unique_character_strings)
+
+
+
+# #6.reverse string with preserving order
+
+def reverse_preserving_order(s):
+    reversed_chars = [c for c in reversed(s) if c != " "]
+    result = ""
+    for char in s:
+        if char == " ":
+            result += " "
+        else:
+            result += reversed_chars.pop(0)
+    return result
+print(reverse_preserving_order("abcd"))
+print(reverse_preserving_order("I am Java Developer"))
+
+
+
+# #7.fibinocci series
+
+n = int(input("Enter the number of terms: "))
+a, b = 0, 1
+
+for i in range(n):
+    print(a, end=" ")
+    a, b = b, a + b
+
+
+#8.concatenate numbers
+
+def max_concatenated_number(nums):
+    concatenated=''.join(map(str,nums))
+    max_num = int(concatenated)
+    return max_num
+numbers = [9,7,4,30]
+result = max_concatenated_number(numbers)
+print(f"The maximum concatenated number is:{result}")
+
+
+
+#9.first non repeating character
+
+
+def find_first_unique(s):    #this function is used to find the first unique character    
+        for char in s:  #this function iterates over each character in a string 
+            if s.count(char) == 1:    #the count method counts how many times char appears in the string s
+                return char    #when the first unique character is found it returns immediately  
+                return None            #If no unique character is found the function returns None.
+input_strings=["array","apple","rat"]   #input
+output=[find_first_unique(string) for string in input_strings]
+print(f"Output:{' '.join([char if char else 'None' for char in output])}")
+
+
+ #10 power of 10
+
+ #importing math module
+import math  
+
+#definig a function it takes the num n as input and checks if it is a power of 10
+def is_power_of_10(n): 
+    #it returns false because powers of 10 should be +ve
+     if n <= 0: 
+          return False
+     #it shows that log of n to the base 10
+     log_result=math.log10(n) 
+ #is_integer method is used to determine if the logarithmic result is a power of 10 or not a power of 10
+     return log_result.is_integer()
+print(is_power_of_10(100))  # Output: True (10^2 = 100)
+print(is_power_of_10(80))    # Output: False (not a power of 10)
+
+
+
+#11.check the given number is power of 2
+
+
+def is_power_of_2(n):   #defining a function
+     if n <= 0:  #it returns false because valu should be +ve
+          return False
+     return (n & (n - 1)) == 0   #bitwise operation
+try:
+     number=int(input("Enter a num to check if it is a power of 2: "))
+     if is_power_of_2(number):   
+          print(f"{number} is  a power of 2")
+     else:
+          print(f"{number} is not a power of 2")
+except ValueError:
+     print("Please enter a valid integer") #If a ValueError is caught, the program prints Please enter a valid integer. and does take
+
+
+
+#12.check the given num is power of 5
+
+
+import math  # Importing math module for logarithmic calculations
+
+def is_power_of_5(n):
+    # Power of 5 must be positive
+    if n <= 0:
+        return False
+    # Calculate log base 5 of the number
+    log_result = math.log(n, 5)
+    # Check if the logarithmic result is a whole number
+    return log_result.is_integer()
+
+# Taking custom input from the user
+try:
+    number = int(input("Enter a number to check if it is a power of 5: "))
+    if is_power_of_5(number):
+        print(f"{number} is a power of 5.")
+    else:
+        print(f"{number} is not a power of 5.")
+except ValueError:
+    print("Please enter a valid integer.")
+
+
+
+
+          
